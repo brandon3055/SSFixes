@@ -31,7 +31,7 @@ public class ModuleLagHunter extends SSModuleBase {
 
     private MonitoredEventBus eventBus = new MonitoredEventBus();
     private static MonitorThread monitor = new MonitorThread();
-    private static int timeLimit = 700;
+    private static int timeLimit = 500;
 
     public ModuleLagHunter() {
         super("lagHunter", "This module monitors the event system for anything that is potentially freezing the game." + "\nIf it detects that an event it taking too long it will print the current stack trace to the console." + "\nThis can then be used to figure out whats causing the issue." + "\nWarning! This is a very hacky module which may break things so it is disabled be default!");
