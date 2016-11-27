@@ -1,6 +1,7 @@
 package com.brandon3055.ssf;
 
 import com.brandon3055.ssf.modules.ModuleBagDupeFix;
+import com.brandon3055.ssf.modules.ModuleLagHunter;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -19,6 +20,7 @@ public class SSF
 
     private void registerModules() {
         ModuleRegistry.register(new ModuleBagDupeFix());
+        ModuleRegistry.register(new ModuleLagHunter());
     }
 
     @Mod.EventHandler

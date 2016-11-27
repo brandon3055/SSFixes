@@ -31,15 +31,24 @@ public class ModuleRegistry {
             REGISTRY.put(module, enabled);
 
             if (enabled) {
-                module.loadConfig(config);
                 module.initialize();
+            }
+        }
+
+        loadModuleConfig(config);
+
+        registryInitialized = true;
+    }
+
+    public static void loadModuleConfig(Configuration config) {
+        for (SSModuleBase module : REGISTRY.keySet()) {
+            if (REGISTRY.get(module)) {
+                module.loadConfig(config);
             }
         }
 
         if (config.hasChanged()) {
             config.save();
         }
-
-        registryInitialized = true;
     }
 }
