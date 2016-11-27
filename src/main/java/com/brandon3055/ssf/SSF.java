@@ -6,8 +6,11 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkCheckHandler;
+import net.minecraftforge.fml.relauncher.Side;
 
 import java.io.File;
+import java.util.Map;
 
 @Mod(modid = SSF.MODID, name = SSF.MODNAME,version = SSF.VERSION)
 public class SSF
@@ -21,6 +24,11 @@ public class SSF
     private void registerModules() {
         ModuleRegistry.register(new ModuleBagDupeFix());
         ModuleRegistry.register(new ModuleLagHunter());
+    }
+
+    @NetworkCheckHandler
+    public boolean networkCheck(Map<String, String> map, Side side) {
+        return true;
     }
 
     @Mod.EventHandler
