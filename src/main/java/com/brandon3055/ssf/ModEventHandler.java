@@ -77,13 +77,6 @@ public class ModEventHandler {
         for (SSModuleBase module : eventListeners.get(EventType.PLAYER_INTERACT_LAST)) {
             module.onEvent(event);
         }
-
-        try {
-            Thread.sleep(200);
-        }
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     @SubscribeEvent
