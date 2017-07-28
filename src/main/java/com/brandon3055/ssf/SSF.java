@@ -1,7 +1,7 @@
 package com.brandon3055.ssf;
 
 import com.brandon3055.ssf.modules.ModuleBagDupeFix;
-import com.brandon3055.ssf.modules.ModuleLagHunter;
+import com.brandon3055.ssf.modules.ModuleMinecartDupeFix;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -23,7 +23,8 @@ public class SSF
 
     private void registerModules() {
         ModuleRegistry.register(new ModuleBagDupeFix());
-        ModuleRegistry.register(new ModuleLagHunter());
+//        ModuleRegistry.register(new ModuleLagHunter(), false);
+        ModuleRegistry.register(new ModuleMinecartDupeFix());
     }
 
     @NetworkCheckHandler
